@@ -1,0 +1,27 @@
+# 数据配置
+data:
+  raw_data_path: "data/battery_performance_data.csv"
+  processed_data_path: "data/processed_data.csv"
+
+# 特征工程配置
+features:
+  k_best_features: 10
+  features_to_exclude: ['battery_id', 'rul']
+  target_column: 'rul'
+
+# 模型配置
+model:
+  test_size: 0.2
+  random_state: 42
+  # 随机森林参数
+  random_forest:
+    n_estimators: 100
+    random_state: 42
+  # XGBoost参数
+  xgboost:
+    n_estimators: 100
+    learning_rate: 0.01
+    max_depth: 6
+  # 集成模型权重 (如果需要)
+  ensemble:
+    weights: [0.5, 0.5] 
